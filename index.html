@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF English Academy - Learn English Online</title>
+    <meta name="description" content="Learn English with expert teachers at GIF English Academy. Free online lesson demo and signup form.">
+    <meta name="keywords" content="English school, learn English, online lessons, Zoom classes, Guatemala">
+    
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #0044cc;
+            color: white;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .cta-button {
+            background: #ffcc00;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .lesson-container {
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        form input {
+            padding: 10px;
+            margin: 5px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #0044cc;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #ddd;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GIF English Academy</h1>
+        <p>Master English with expert teachers – Online & Interactive</p>
+        <a href="#lesson" class="cta-button">Try a Free Lesson</a>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>GIF English Academy offers high-quality English lessons via Zoom and interactive online courses.</p>
+    </section>
+
+    <section id="lesson">
+        <h2>🎓 Try a Free Lesson!</h2>
+        <p>Practice your English by matching the correct word.</p>
+        
+        <div class="lesson-container">
+            <p><strong>Choose the correct word:</strong></p>
+            <p><span id="question">The cat is ___ the table.</span></p>
+            <button onclick="checkAnswer('on')">On</button>
+            <button onclick="checkAnswer('under')">Under</button>
+            <button onclick="checkAnswer('behind')">Behind</button>
+        </div>
+
+        <p id="lesson-result"></p>
+    </section>
+
+    <section id="signup">
+        <h2>📩 Sign Up for More Lessons</h2>
+        <form id="signupForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button type="submit">Get Started</button>
+        </form>
+        <p id="signup-message"></p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>📧 Email: <a href="mailto:info@gifenglishacademy.com">info@gifenglishacademy.com</a></p>
+        <p>📞 WhatsApp: +502 1234 5678</p>
+    </section>
+
+    <footer>
+        <p>© 2025 GIF English Academy. Powered by <a href="https://3dvr.tech" target="_blank">3dvr.tech</a></p>
+    </footer>
+
+    <script>
+        function checkAnswer(answer) {
+            const correctAnswer = "on";
+            const result = document.getElementById("lesson-result");
+            if (answer === correctAnswer) {
+                result.innerHTML = "✅ Correct! The cat is ON the table.";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "❌ Incorrect. Try again!";
+                result.style.color = "red";
+            }
+        }
+
+        // Handle signup form submission
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            document.getElementById("signup-message").innerHTML = `✅ Thank you, ${name}! We'll send you more lessons to ${email}.`;
+        });
+    </script>
+
+</body>
+</html>
